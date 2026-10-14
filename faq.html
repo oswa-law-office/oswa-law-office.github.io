@@ -1,0 +1,599 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>الأسئلة الشائعة | المحامية أسوه توفيق أبو شقره</title>
+
+  <meta name="description" content="إجابات عامة عن الأسئلة الشائعة المتعلقة بالنفقة والحضانة والطلاق والخلع والمهر والإجراءات أمام المحاكم الشرعية في الأردن.">
+
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#10233f">
+
+  <link rel="canonical" href="https://oswa-law-office.github.io/faq.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #10233f;
+      --navy-light: #1b3557;
+      --gold: #c9a45c;
+      --gold-light: #f2e5c7;
+      --cream: #faf8f3;
+      --white: #ffffff;
+      --text: #293548;
+      --muted: #687386;
+      --border: #e8e2d6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.9;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .top-line {
+      height: 5px;
+      background: var(--gold);
+    }
+
+    header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 18px 20px;
+      border-bottom: 1px solid rgba(201, 164, 92, 0.4);
+    }
+
+    .nav {
+      max-width: 1080px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      color: var(--white);
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .home-link {
+      color: var(--white);
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 7px 15px;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .home-link:hover {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      color: var(--white);
+      padding: 65px 20px 70px;
+      text-align: center;
+      border-bottom: 4px solid var(--gold);
+    }
+
+    .hero .eyebrow {
+      color: var(--gold-light);
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 43px);
+      margin: 0 0 12px;
+      line-height: 1.5;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto;
+      color: #e0e7f0;
+      font-size: 15px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 45px auto;
+      padding: 0 20px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .intro h2 {
+      color: var(--navy);
+      font-size: 25px;
+      margin: 0 0 8px;
+    }
+
+    .intro p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .category {
+      margin-bottom: 30px;
+    }
+
+    .category-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--navy);
+      font-size: 19px;
+      margin: 0 0 13px;
+    }
+
+    .category-title::before {
+      content: "";
+      width: 5px;
+      height: 25px;
+      border-radius: 5px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .faq-item[open] {
+      border-color: var(--gold);
+    }
+
+    .faq-item summary {
+      position: relative;
+      padding: 17px 20px;
+      padding-left: 48px;
+      cursor: pointer;
+      list-style: none;
+      color: var(--navy);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold);
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+    .faq-item[open] summary::after {
+      content: "−";
+    }
+
+    .answer {
+      padding: 0 20px 18px;
+      color: #536074;
+      font-size: 14px;
+      border-top: 1px solid #f0ece4;
+    }
+
+    .answer p {
+      margin: 13px 0 0;
+    }
+
+    .notice {
+      background: #f3eddf;
+      border-right: 4px solid var(--gold);
+      border-radius: 8px;
+      padding: 17px 20px;
+      margin: 35px 0;
+      color: #51452e;
+      font-size: 13px;
+    }
+
+    .contact {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 35px;
+    }
+
+    .contact h2 {
+      color: var(--navy);
+      margin: 0 0 8px;
+      font-size: 23px;
+    }
+
+    .contact p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 auto 20px;
+      max-width: 570px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 22px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--navy-light);
+    }
+
+    .btn-secondary {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .btn-secondary:hover {
+      background: #b68e42;
+    }
+
+    footer {
+      background: var(--navy);
+      color: #e0e7f0;
+      text-align: center;
+      padding: 25px 20px;
+      margin-top: 50px;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: var(--gold-light);
+    }
+
+    footer a {
+      color: var(--gold-light);
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 45px 18px 50px;
+      }
+
+      main {
+        margin: 30px auto;
+        padding: 0 14px;
+      }
+
+      .category-title {
+        font-size: 17px;
+      }
+
+      .faq-item summary {
+        font-size: 14px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+
+      .contact {
+        padding: 25px 15px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-line"></div>
+
+  <header>
+    <nav class="nav" aria-label="القائمة الرئيسية">
+      <a class="brand" href="index.html">
+        المحامية أسوه توفيق أبو شقره
+        <span>متخصصة بالمحاماة الشرعية</span>
+      </a>
+
+      <a class="home-link" href="index.html">العودة إلى الصفحة الرئيسية ←</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow">دليل قانوني مبسّط</div>
+    <h1>الأسئلة الشائعة</h1>
+    <p>
+      إجابات عامة عن أبرز الاستفسارات المتعلقة بقضايا الأحوال الشخصية
+      والإجراءات أمام المحاكم الشرعية في الأردن.
+    </p>
+  </section>
+
+  <main>
+
+    <div class="intro">
+      <h2>كيف يمكننا مساعدتك؟</h2>
+      <p>اختاري الموضوع الذي يهمك واضغطي على السؤال لقراءة الإجابة.</p>
+    </div>
+
+    <section class="category">
+      <h3 class="category-title">النفقة والحقوق المالية</h3>
+
+      <details class="faq-item">
+        <summary>ما المقصود بالنفقة الزوجية؟</summary>
+        <div class="answer">
+          <p>
+            النفقة الزوجية من المسائل التي ينظمها قانون الأحوال الشخصية،
+            ويتوقف استحقاقها على الظروف والشروط القانونية المتعلقة بكل حالة.
+            ويمكن تقييم الحالة بعد معرفة الوقائع والمستندات ذات الصلة.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>كيف يمكن المطالبة بنفقة الأطفال؟</summary>
+        <div class="answer">
+          <p>
+            تبدأ دراسة المطالبة بمعرفة احتياجات الأطفال والظروف الأسرية
+            والمعلومات المتعلقة بالوالدين، ثم تحديد الإجراء المناسب وفق
+            القانون الأردني والوقائع الخاصة بالحالة.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>هل يمكن المطالبة بالنفقة عن فترة سابقة؟</summary>
+        <div class="answer">
+          <p>
+            قد تختلف الإجابة بحسب نوع النفقة والمدة والظروف والأحكام
+            القانونية المنطبقة. لذلك ينبغي مراجعة تفاصيل الحالة قبل تحديد
+            إمكانية المطالبة والفترة التي يمكن المطالبة عنها.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>ما المقصود بالمهر وما حقوق الزوجة المتعلقة به؟</summary>
+        <div class="answer">
+          <p>
+            المهر حق مالي تنظمه أحكام الزواج والقانون، وقد تتعلق المطالبة
+            به بمقدار المهر المعجل والمؤجل وما تم دفعه والوقائع المرتبطة
+            بالعلاقة الزوجية. وتحتاج كل حالة إلى مراجعة عقد الزواج
+            والتفاصيل ذات الصلة.
+          </p>
+        </div>
+      </details>
+    </section>
+
+    <section class="category">
+      <h3 class="category-title">الطلاق والخلع</h3>
+
+      <details class="faq-item">
+        <summary>ما الفرق بين الطلاق والخلع؟</summary>
+        <div class="answer">
+          <p>
+            الطلاق والخلع طريقان مختلفان لإنهاء العلاقة الزوجية، ولكل منهما
+            أحكامه وشروطه وآثاره. ويتوقف تحديد الإجراء المناسب على طبيعة
+            الحالة والوقائع والحقوق المالية المرتبطة بها.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>ما الأمور التي يجب معرفتها قبل البدء بإجراءات الطلاق؟</summary>
+        <div class="answer">
+          <p>
+            من المفيد توضيح الحالة الزوجية والوقائع المتعلقة بالخلاف،
+            ومراجعة عقد الزواج والمستندات المتوفرة، ومعرفة المسائل المتعلقة
+            بالنفقة والمهر والأطفال إن وجدت، لتحديد الخطوات المناسبة.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>هل تختلف الحقوق بعد الطلاق من حالة إلى أخرى؟</summary>
+        <div class="answer">
+          <p>
+            نعم، فقد تختلف الحقوق والآثار القانونية بحسب نوع الفرقة
+            والظروف المحيطة بها ووجود أطفال والحقوق المالية والمستندات
+            ذات الصلة. ولا يمكن تحديد النتيجة القانونية دون دراسة الحالة.
+          </p>
+        </div>
+      </details>
+    </section>
+
+    <section class="category">
+      <h3 class="category-title">الحضانة وشؤون الأطفال</h3>
+
+      <details class="faq-item">
+        <summary>ما المقصود بحضانة الأطفال؟</summary>
+        <div class="answer">
+          <p>
+            الحضانة تتعلق برعاية الطفل والاهتمام بشؤونه وفق الأحكام القانونية
+            المطبقة. وتُدرس مسائل الحضانة مع مراعاة الظروف الخاصة بالطفل
+            والقواعد التي ينظمها القانون الأردني.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>هل الحضانة والنفقة موضوع واحد؟</summary>
+        <div class="answer">
+          <p>
+            لا، فالحضانة والنفقة مسألتان قانونيتان مختلفتان، وإن كانتا
+            مرتبطتين بشؤون الطفل. ولكل منهما شروطها وأحكامها، ويجب بحث
+            كل مسألة وفق ظروفها الخاصة.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>ماذا أفعل إذا كان لدي خلاف يتعلق بحضانة أطفالي؟</summary>
+        <div class="answer">
+          <p>
+            من الأفضل جمع المعلومات والمستندات المتعلقة بالطفل والظروف
+            الأسرية، وتوضيح طبيعة الخلاف قبل تحديد الإجراء القانوني
+            المناسب. وتُدرس كل حالة بحسب وقائعها ومصلحة الطفل والقانون
+            المنطبق.
+          </p>
+        </div>
+      </details>
+    </section>
+
+    <section class="category">
+      <h3 class="category-title">المحاكم الشرعية والاستشارات</h3>
+
+      <details class="faq-item">
+        <summary>كيف أستعد للاستشارة القانونية؟</summary>
+        <div class="answer">
+          <p>
+            يُفضّل إعداد ملخص واضح للوقائع والتواريخ المهمة، وتحديد
+            الأسئلة التي ترغبين في مناقشتها، وتجهيز المستندات ذات الصلة
+            عند الحاجة. لا ترسلي وثائق أو معلومات حساسة عبر وسائل غير آمنة.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>ما المستندات المطلوبة لرفع قضية شرعية؟</summary>
+        <div class="answer">
+          <p>
+            تختلف المستندات المطلوبة بحسب نوع القضية والطلبات المقدمة.
+            لذلك من الأفضل تحديد موضوع القضية أولًا، ثم التحقق من
+            المستندات والمتطلبات اللازمة قبل البدء بالإجراءات.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>كم تستغرق القضية أمام المحكمة الشرعية؟</summary>
+        <div class="answer">
+          <p>
+            تختلف المدة من قضية إلى أخرى تبعًا لنوع الدعوى والإجراءات
+            والتبليغات والأدلة والظروف الخاصة بكل ملف. لذلك لا يمكن
+            تحديد مدة ثابتة أو ضمان موعد معين لانتهاء القضية.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>كيف أتواصل مع المحامية أسوه توفيق أبو شقره؟</summary>
+        <div class="answer">
+          <p>
+            يمكنك التواصل هاتفيًا أو عبر واتساب للاستفسار عن الخدمات
+            وتحديد طريقة مناسبة لطلب الاستشارة.
+          </p>
+          <p>
+            عنوان المكتب: الرصيفة - شارع الملك حسين - بجانب البنك الأهلي.
+          </p>
+          <p>
+            ساعات العمل: يوميًا من الساعة 12 ظهرًا حتى 4 عصرًا،
+            ما عدا يوم الجمعة.
+          </p>
+        </div>
+      </details>
+    </section>
+
+    <div class="notice">
+      <strong>تنويه قانوني:</strong>
+      المعلومات الواردة في هذه الصفحة للتوعية العامة فقط، ولا تُعد
+      استشارة قانونية خاصة أو بديلًا عن دراسة تفاصيل القضية والمستندات
+      والرجوع إلى التشريعات الأردنية النافذة. قد تختلف الإجابة القانونية
+      بحسب ظروف كل حالة.
+    </div>
+
+    <section class="contact">
+      <h2>هل لديك استفسار آخر؟</h2>
+      <p>
+        يمكنك التواصل للاستفسار عن الخدمات القانونية وتحديد موعد
+        للاستشارة بما يتناسب مع احتياجاتك.
+      </p>
+
+      <div class="buttons">
+        <a
+          class="btn btn-primary"
+          href="tel:+962782321219"
+        >اتصلي الآن</a>
+
+        <a
+          class="btn btn-secondary"
+          href="https://wa.me/962782321219"
+          target="_blank"
+          rel="noopener noreferrer"
+        >تواصلي عبر واتساب</a>
+
+        <a
+          class="btn btn-primary"
+          href="index.html"
+        >العودة إلى الموقع الرئيسي</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <strong>المحامية أسوه توفيق أبو شقره</strong>
+    <p>متخصصة بالمحاماة الشرعية</p>
+    <a href="index.html">الصفحة الرئيسية</a>
+    <p>© جميع الحقوق محفوظة</p>
+  </footer>
+
+</body>
+</html>
+```
